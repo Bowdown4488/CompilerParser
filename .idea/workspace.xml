@@ -1,17 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="63bfef75-743f-4d38-9d93-3e1918da466d" name="Default Changelist" comment="" />
+    <list default="true" id="63bfef75-743f-4d38-9d93-3e1918da466d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/Java8Lexer.interp" beforeDir="false" afterPath="$PROJECT_DIR$/gen/Java8Lexer.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/Java8Lexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/Java8Lexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/Java8Parser.interp" beforeDir="false" afterPath="$PROJECT_DIR$/gen/Java8Parser.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/Java8Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/Java8Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/Java8ParserBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/Java8ParserBaseListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/Java8ParserBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/Java8ParserBaseVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/Java8ParserListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/Java8ParserListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/Java8ParserVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/Java8ParserVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testinput.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testinput.txt" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1SmkPfjl988HdMblQNReoFpPVRF" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -24,6 +49,28 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager" selected="Application.test">
+    <configuration name="parserMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="parserMain" />
+      <module name="ParserTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test" />
+      <module name="ParserTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.test" />
+        <item itemvalue="Application.parserMain" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -38,10 +85,25 @@
       <workItem from="1572176137191" duration="927000" />
       <workItem from="1572177549350" duration="1058000" />
       <workItem from="1572178719314" duration="1433000" />
+      <workItem from="1572193685155" duration="3404000" />
+      <workItem from="1572197472732" duration="2683000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
