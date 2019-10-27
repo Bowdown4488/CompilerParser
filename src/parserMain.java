@@ -1,13 +1,10 @@
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 import org.antlr.v4.gui.TreeViewer;
-import org.antlr.v4.runtime.ANTLRInputStream;
-import org.antlr.v4.runtime.CharStream;
-import org.antlr.v4.runtime.CommonTokenStream;
-import org.antlr.v4.runtime.TokenStream;
+import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.ParseTree;
 
 import static org.antlr.v4.runtime.CharStreams.fromFileName;
@@ -28,10 +25,24 @@ public class parserMain {
         Java8Lexer lexer  = new Java8Lexer(stream);
         TokenStream tokenStream = new CommonTokenStream(lexer);
         Java8Parser parser = new Java8Parser(tokenStream);
-        ParseTree tree = parser.compilationUnit();
+
+        SyntaxErrorListener listener = new SyntaxErrorListener();
+
+        //HIDES ALL RED COMMENTS
+        //parser.removeErrorListener(ConsoleErrorListener.INSTANCE);
+
+        parser.addErrorListener(listener);
+        //ArrayList<SyntaxError> SyEx = new ArrayList<>(listener.getSyntaxErrors());
+
 
         //show AST in console
-        System.out.println(tree.toStringTree(parser));
+        ParseTree tree = parser.compilationUnit();
+        //System.out.println(tree.toStringTree(parser));
+
+        // check syntax error class to see this function
+        // maybe check the stuff within message and make a new message out of it
+        listener.getSyntaxErrors().get(0).printALL();
+
 
         //show AST in GUI
         JFrame frame = new JFrame("Antlr AST");
@@ -39,10 +50,13 @@ public class parserMain {
         TreeViewer viewr = new TreeViewer(Arrays.asList(
                 parser.getRuleNames()),tree);
         //SIZE CHANGE HERE
-        viewr.setScale(0.5);//scale a little
+        viewr.setScale(1);//scale a little
         //
         panel.add(viewr);
-        frame.add(panel);
+
+        JScrollPane scrollPane = new JScrollPane(panel);
+        frame.add(scrollPane);
+
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(200,200);
         frame.setVisible(true);
