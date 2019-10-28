@@ -18,6 +18,9 @@ import static org.antlr.v4.runtime.CharStreams.fromString;
 
 public class Tree {
     private JPanel panel;
+    private JTextArea textArea1;
+    private JButton button1;
+    private JButton button2;
     JFrame frame = new JFrame("Antlr AST");
     public Tree() throws IOException {
         frame.setContentPane(panel);
@@ -25,6 +28,12 @@ public class Tree {
         frame.setSize(200,200);
         frame.setVisible(true);
         run("testinput.txt");
+        button1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
     }
     public void run(String s) throws IOException {
         CharStream stream = null;
