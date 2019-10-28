@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63bfef75-743f-4d38-9d93-3e1918da466d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gen/Java8Lexer.interp" beforeDir="false" afterPath="$PROJECT_DIR$/gen/Java8Lexer.interp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gen/Java8Lexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/Java8Lexer.java" afterDir="false" />
@@ -13,7 +11,12 @@
       <change beforePath="$PROJECT_DIR$/gen/Java8ParserBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/Java8ParserBaseVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gen/Java8ParserListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/Java8ParserListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gen/Java8ParserVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/Java8ParserVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testinput.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testinput.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ParserTest/Java8Lexer.interp" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ParserTest/Java8Lexer.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ParserTest/Java8Parser.interp" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ParserTest/Java8Parser.interp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ParserTest/Tree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ParserTest/Tree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ParserTest/parserMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ParserTest/parserMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SyntaxError.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SyntaxError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parserMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parserMain.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +53,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.test">
+  <component name="RunManager" selected="Application.parserMain">
     <configuration name="parserMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="parserMain" />
       <module name="ParserTest" />
@@ -67,8 +70,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.test" />
         <item itemvalue="Application.parserMain" />
+        <item itemvalue="Application.test" />
       </list>
     </recent_temporary>
   </component>
@@ -87,6 +90,8 @@
       <workItem from="1572178719314" duration="1433000" />
       <workItem from="1572193685155" duration="3404000" />
       <workItem from="1572197472732" duration="2683000" />
+      <workItem from="1572251361660" duration="92000" />
+      <workItem from="1572251476721" duration="4278000" />
     </task>
     <servers />
   </component>

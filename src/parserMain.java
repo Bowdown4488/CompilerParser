@@ -12,18 +12,11 @@ import org.antlr.v4.runtime.tree.ParseTree;
 import static org.antlr.v4.runtime.CharStreams.fromFileName;
 import static org.antlr.v4.runtime.CharStreams.fromString;
 
-/**
- * A simple demo to show AST GUI with ANTLR
- * @see http://www.antlr.org/api/Java/org/antlr/v4/runtime/tree/gui/TreeViewer.html
- *
- * @author wangdq
- * 2014-5-24
- *
- */
 public class parserMain {
     static public double SIZE = 0.5;
     public static void main(String[] args) throws IOException {
         //prepare token stream
+
         String s = "testinput.txt";
         CharStream stream = fromFileName(s);
         Java8Lexer lexer  = new Java8Lexer(stream);
@@ -32,8 +25,8 @@ public class parserMain {
 
         SyntaxErrorListener listener = new SyntaxErrorListener();
 
-        //HIDES ALL RED COMMENTS
-        //parser.removeErrorListener(ConsoleErrorListener.INSTANCE);
+//        HIDES ALL RED COMMENTS
+        parser.removeErrorListener(ConsoleErrorListener.INSTANCE);
 
         parser.addErrorListener(listener);
         //ArrayList<SyntaxError> SyEx = new ArrayList<>(listener.getSyntaxErrors());
@@ -71,7 +64,7 @@ public class parserMain {
         panel2.add(textarea);
         textarea.setEditable(false);
         for(int i=0;i<listener.getSyntaxErrors().size();i++){
-            textarea.append("line: "+listener.getSyntaxErrors().get(i).getLine()+" "+listener.getSyntaxErrors().get(i).getMessage()+"\n");
+            textarea.append("(Error at line:"+listener.getSyntaxErrors().get(i).getLine()+") "+listener.getSyntaxErrors().get(i).getMessage()+"\n");
         }
         JScrollPane scrollPane2 = new JScrollPane(panel2);
         frame2.add(scrollPane2);

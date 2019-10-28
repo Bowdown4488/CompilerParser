@@ -58,11 +58,11 @@ public class SyntaxError
 
     //i made this
     public void printALL(){
-        System.out.println("Recognizer: "+recognizer);
-        System.out.println("Offending Symbol: "+offendingSymbol);
-        System.out.println("Line: "+line);
-        System.out.println("Char Position In Line: "+charPositionInLine);
-        System.out.println(message);
+//        System.out.println("Recognizer: "+recognizer);
+//        System.out.println("Offending Symbol: "+offendingSymbol);
+//        System.out.println("Line: "+line);
+//        System.out.println("Char Position In Line: "+charPositionInLine);
+//        System.out.println(message);
     }
 
 }
