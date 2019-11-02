@@ -1,4 +1,4 @@
-// Generated from C:/Users/Paolo/IdeaProjects/ParserTest\Java8Parser.g4 by ANTLR 4.7.2
+// Generated from C:/Users/Paolo/IdeaProjects/CompilerParser\Java8Parser.g4 by ANTLR 4.7.2
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -10,6 +10,8 @@ import org.antlr.v4.runtime.tree.TerminalNode;
  * of the available methods.
  */
 public class Java8ParserBaseListener implements Java8ParserListener {
+
+
 	/**
 	 * {@inheritDoc}
 	 *
