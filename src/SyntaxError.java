@@ -23,6 +23,7 @@ public class SyntaxError
         //MAKE NEW MESSAGE HERE IDK TAPOS PRINT MO NALANG
         if(message.contains("viable")){
             newMessage= newMessage+"";
+
         }
     }
 

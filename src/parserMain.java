@@ -71,8 +71,35 @@ public class parserMain {
         JTextArea textarea = new JTextArea();
         panel2.add(textarea);
         textarea.setEditable(false);
-        for(int i=0;i<Slistener.getSyntaxErrors().size();i++){
-            textarea.append("(Error at line:"+Slistener.getSyntaxErrors().get(i).getLine()+") "+Slistener.getSyntaxErrors().get(i).getMessage()+"\n");
+        for(int i=0;i<Slistener.getSyntaxErrors().size();i++) {
+            System.out.println("Line " + Slistener.getSyntaxErrors().get(i).getLine());
+            System.out.println("Message: "+Slistener.getSyntaxErrors().get(i).getOffendingSymbol());
+            String msg = Slistener.getSyntaxErrors().get(i).getMessage();
+            String error = msg.split("'")[1];
+            System.out.println(msg.split("'")[0]);
+            System.out.println("Error symbols found: " + error);
+            System.out.println("_____________________________________________________________");
+            if (msg.contains("missing")) {
+                textarea.append("(Syntax error at line:" + Slistener.getSyntaxErrors().get(i).getLine() + ") " + "missing -> " + error + "\n");
+            }
+            else if (msg.contains("extraneous input")){
+                textarea.append("(Syntax error at line:" + Slistener.getSyntaxErrors().get(i).getLine() + ") " + "extra character/s -> " + error + "\n");
+            }
+            else if(msg.contains("mismatched input")){
+                textarea.append("(Syntax error at line:" + Slistener.getSyntaxErrors().get(i).getLine() + ") " + "unexpected -> " + error + "\n");
+            }
+            else if(msg.contains("no viable alternative at input")){
+                String test = Slistener.getSyntaxErrors().get(i).getOffendingSymbol().toString();
+                test = test.split("'")[1];
+//                System.out.println(test);
+                textarea.append("(Syntax error at line:" + Slistener.getSyntaxErrors().get(i).getLine() + ") " + "consider changing symbol in expression -> " + test + "\n");
+            }
+            else if(msg.contains("cannot find symbol")){
+                textarea.append("(Syntax error at line:" + Slistener.getSyntaxErrors().get(i).getLine() + ") " + "missing symbol -> " + error + "\n");
+            }
+            else {
+                textarea.append("(Syntax error at line:" + Slistener.getSyntaxErrors().get(i).getLine() + ") " + Slistener.getSyntaxErrors().get(i).getMessage() + "\n");
+            }
         }
         JScrollPane scrollPane2 = new JScrollPane(panel2);
         frame2.add(scrollPane2);
@@ -137,7 +164,14 @@ public class parserMain {
 
         errors.setText("");
         for(int i=0;i<listener.getSyntaxErrors().size();i++){
-            errors.append("line: "+listener.getSyntaxErrors().get(i).getLine()+" "+listener.getSyntaxErrors().get(i).getMessage()+"\n");
+            String msg = listener.getSyntaxErrors().get(i).getMessage();
+            String error = msg.split("'")[1];
+            System.out.println(error);
+            if (error.contains("missing")) {
+                errors.append("(Syntax error at line:" + listener.getSyntaxErrors().get(i).getLine() + ") " + "missing " + error + "\n");
+            } else {
+                errors.append("(Syntax error at line:" + listener.getSyntaxErrors().get(i).getLine() + ") " + listener.getSyntaxErrors().get(i).getMessage() + "\n");
+            }
         }
 
         viewr.setScale(SIZE);//scale a little

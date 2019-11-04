@@ -396,9 +396,9 @@ public class MyListener extends Java8ParserBaseListener{
         }else{
             //CHILD NODE IF THERES NOTHING IN THE UNIT??? IDK BASTA THIS MEANS ITS THE ONLY NODE
             ctr++;
-            System.out.println("Child no. "+ctr+": "+ctx);
+//            System.out.println("Child no. "+ctr+": "+ctx);
         }
-        System.out.println("Child Node count:"+ctr);
+//        System.out.println("Child Node count:"+ctr);
 
 
     }
@@ -411,7 +411,7 @@ public class MyListener extends Java8ParserBaseListener{
             //THIS IS A CHILD NODE IDK HOW TO CHECK IF ITS AN ERROR
             //ctx.getParent() TO GET ITS PARENT THO GENERALLY IF ITS A RULE YUNG PARENT ITS PROBABLY WEIRD NUMBERS AS ITS VALUE IDK
             ctr++;
-            System.out.println("Child no. "+ctr+": "+ctx);
+//            System.out.println("Child no. "+ctr+": "+ctx);
         }
     }
     /**
