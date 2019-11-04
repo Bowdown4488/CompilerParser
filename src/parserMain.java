@@ -13,7 +13,7 @@ import static org.antlr.v4.runtime.CharStreams.fromFileName;
 import static org.antlr.v4.runtime.CharStreams.fromString;
 
 public class parserMain {
-    static public double SIZE = 0.5;
+    static public double SIZE = 1;
     public static void main(String[] args) throws IOException {
         //prepare token stream
 
@@ -48,7 +48,7 @@ public class parserMain {
 
 
 
-        /*
+
         //show AST in GUI
         //FRAME 1 CONTAINS TREE
         JFrame frame = new JFrame("Antlr Tree");
@@ -71,8 +71,8 @@ public class parserMain {
         JTextArea textarea = new JTextArea();
         panel2.add(textarea);
         textarea.setEditable(false);
-        for(int i=0;i<listener.getSyntaxErrors().size();i++){
-            textarea.append("(Error at line:"+listener.getSyntaxErrors().get(i).getLine()+") "+listener.getSyntaxErrors().get(i).getMessage()+"\n");
+        for(int i=0;i<Slistener.getSyntaxErrors().size();i++){
+            textarea.append("(Error at line:"+Slistener.getSyntaxErrors().get(i).getLine()+") "+Slistener.getSyntaxErrors().get(i).getMessage()+"\n");
         }
         JScrollPane scrollPane2 = new JScrollPane(panel2);
         frame2.add(scrollPane2);
@@ -102,7 +102,7 @@ public class parserMain {
         frame3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame3.setSize(200,200);
         frame3.setVisible(true);
-        */
+
     }
 
     /*

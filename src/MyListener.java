@@ -2,6 +2,7 @@
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
+import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
 /**
@@ -387,7 +388,32 @@ public class MyListener extends Java8ParserBaseListener{
      *
      * <p>The default implementation does nothing.</p>
      */
-    @Override public void enterCompilationUnit(Java8Parser.CompilationUnitContext ctx) { }
+    @Override public void enterCompilationUnit(Java8Parser.CompilationUnitContext ctx) {
+        if(ctx.getChildCount()>0){
+            for(int i =0;i<ctx.getChildCount();i++){
+                childRecursion(ctx.getChild(i));
+            }
+        }else{
+            //CHILD NODE IF THERES NOTHING IN THE UNIT??? IDK BASTA THIS MEANS ITS THE ONLY NODE
+            ctr++;
+            System.out.println("Child no. "+ctr+": "+ctx);
+        }
+        System.out.println("Child Node count:"+ctr);
+
+
+    }
+    public void childRecursion(ParseTree ctx){
+        if(ctx.getChildCount()>0){
+            for(int i=0;i<ctx.getChildCount();i++){
+                childRecursion(ctx.getChild(i));
+            }
+        }else{
+            //THIS IS A CHILD NODE IDK HOW TO CHECK IF ITS AN ERROR
+            //ctx.getParent() TO GET ITS PARENT THO GENERALLY IF ITS A RULE YUNG PARENT ITS PROBABLY WEIRD NUMBERS AS ITS VALUE IDK
+            ctr++;
+            System.out.println("Child no. "+ctr+": "+ctx);
+        }
+    }
     /**
      * {@inheritDoc}
      *
@@ -2848,8 +2874,39 @@ public class MyListener extends Java8ParserBaseListener{
      *
      * <p>The default implementation does nothing.</p>
      */
+    public int ctr=0;
+    public int ctr2=0;
     @Override public void enterEveryRule(ParserRuleContext ctx) {
-        System.out.println("rule entered: " + ctx.getText());
+        /*
+        //if(ctx.getChildCount()==0||ctx.getText().equals(ctx.getChild(0).toString())){
+            //i++;
+            //System.out.println("Child node# "+i);
+            //System.out.println("rule entered: " + ctx.getText());
+            //System.out.println("Parent are:"+ctx.getParent());
+            //System.out.println("Parent is called:"+ctx.getParent().getText());
+            //System.out.println("Children count:"+ctx.getChildCount());
+            //System.out.println("First Children is:"+ctx.getChild(1));
+            //System.out.println("CTX IS: "+ctx);
+            if(ctx.getChildCount()>0){
+                //System.out.print("Children are: "+ctx.getChild(0));
+                for(int i=0;i<ctx.getChildCount();i++){
+                    //System.out.print(" , "+ctx.getChild(i));
+                    if(ctx.getChild(i).getChildCount()==0){
+                        ctr++;
+                        System.out.println("Child no. "+ctr+": "+ctx.getChild(i));
+                    }
+
+
+                }
+                //System.out.println();
+            }else{
+                ctr2++;
+                System.out.println("Child2 no. "+ctr2+": "+ctx);
+            }
+            //System.out.println("_______________________________________________");
+        //}
+
+        */
     }
     /**
      * {@inheritDoc}
