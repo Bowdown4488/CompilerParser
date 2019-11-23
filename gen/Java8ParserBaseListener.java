@@ -10,6 +10,8 @@ import org.antlr.v4.runtime.tree.TerminalNode;
  * of the available methods.
  */
 public class Java8ParserBaseListener implements Java8ParserListener {
+
+
 	/**
 	 * {@inheritDoc}
 	 *
