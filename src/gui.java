@@ -116,17 +116,21 @@ public class gui extends javax.swing.JFrame {
     }// </editor-fold>
 
     private void ScanBtnActionPerformed(java.awt.event.ActionEvent evt) {
-//        org.antlr.v4.runtime.CharStream stream = fromString(Input.getText());
-//        Java8Lexer lexer  = new Java8Lexer(stream);
-//
-//        org.antlr.v4.runtime.Token token = lexer.nextToken();
-//        ArrayList<Token> tokens = new ArrayList<>();
-//        ArrayList<String> tokentypes = new ArrayList<>();
-//        while (token.getType() != Java8Lexer.EOF) {
-//            tokens.add(token);
-//            tokentypes.add(getTokenType(token.getType(),token.getText()));
-//            token = lexer.nextToken();
-//        }
+        Output.setText("");
+        org.antlr.v4.runtime.CharStream stream = fromString(Input.getText());
+        Java8Lexer lexer  = new Java8Lexer(stream);
+
+        org.antlr.v4.runtime.Token token = lexer.nextToken();
+        ArrayList<Token> tokens = new ArrayList<>();
+        ArrayList<String> tokentypes = new ArrayList<>();
+        String type;
+        while (token.getType() != Java8Lexer.EOF) {
+            tokens.add(token);
+            type = (getTokenType(token.getType(),token.getText()));
+            tokentypes.add(type);
+            Output.append(token.getText() + "\t\t" + type + "\n");
+            token = lexer.nextToken();
+        }
     }
 
     private void ParseBtnActionPerformed(java.awt.event.ActionEvent evt) {
@@ -172,29 +176,29 @@ public class gui extends javax.swing.JFrame {
         // TODO add your handling code here:
     }
 
-//    private static String getTokenType(int tokenType,String tokenString) {
-//
-//        switch (tokenType) {
-//            case Java8Lexer.KEYWORD:
+    private static String getTokenType(int tokenType,String tokenString) {
+
+        switch (tokenType) {
+//            case Java8Lexer.Keyword:
 //                System.out.println("\t" +  tokenString + "\t\t" + "Keyword");
 //                return "Keyword";
-//            case Java8Lexer.SEPARATOR:
+//            case Java8Lexer.Separator:
 //                System.out.println("\t" +  tokenString + "\t\t" + "Separator");
 //                return "Separator";
-//            case Java8Lexer.OPERATOR:
+//            case Java8Lexer.Operator:
 //                System.out.println("\t" +  tokenString + "\t\t" + "Operator");
 //                return "Operator";
 //            case Java8Lexer.Identifier:
 //                System.out.println("\t" +  tokenString + "\t\t" + "Identifier");
 //                return "Identifier";
-//            case Java8Lexer.LITERAL:
+//            case Java8Lexer.Literal:
 //                System.out.println("\t" +  tokenString + "\t\t" + "Literal");
 //                return "Literal";
-//            default:
-//                System.out.println("\t" +  tokenString + "\t\t" + "Other");
-//                return "Other";
-//        }
-//    }
+            default:
+                System.out.println("\t" +  tokenString + "\t\t" + "Other");
+                return "Other";
+        }
+    }
 
     /**
      * @param args the command line arguments

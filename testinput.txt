@@ -3,7 +3,7 @@ pubriko kurasu HelloWorld {
         returno furoto;
     }
 
-    pubriko statiku into myFunc(int y,int x) {
+    pubriko statiku into myFunc(into y,into x) {
         into compute = x + y * 2 + func(2);
         returno 2 + 3;
     }
