@@ -114,47 +114,46 @@ public class gui extends javax.swing.JFrame {
 
     private void ScanBtnActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-            org.antlr.v4.runtime.CharStream stream = fromString(Input.getText());
-            Java8Lexer lexer  = new Java8Lexer(stream);
-            org.antlr.v4.runtime.TokenStream tokenStream = new CommonTokenStream(lexer);
-            Java8Parser parser = new Java8Parser(tokenStream);
-
-            SyntaxErrorListener listener = new SyntaxErrorListener();
-            parser.addErrorListener(listener);
-            ParseTree tree = parser.compilationUnit();
-
-            Output.setText("");
-            for(int i=0;i<listener.getSyntaxErrors().size();i++){
-                String msg = listener.getSyntaxErrors().get(i).getMessage();
-                String error = msg.split("'")[1];
-                System.out.println(error);
-                if (error.contains("missing")) {
-                    Output.append("(Syntax error at line:" + listener.getSyntaxErrors().get(i).getLine() + ") " + "missing " + error + "\n");
-                } else {
-                    Output.append("(Syntax error at line:" + listener.getSyntaxErrors().get(i).getLine() + ") " + listener.getSyntaxErrors().get(i).getMessage() + "\n");
-                }
-            }
-
-
-            JFrame frame = new JFrame("Antlr Tree");
-            frame.setLocation(600,0);
-            JPanel panel = new JPanel();
-            TreeViewer viewr = new TreeViewer(Arrays.asList(
-                    parser.getRuleNames()),tree);
-            //SIZE CHANGE HERE
-            viewr.setScale(1);//scale a little
-            //
-            panel.add(viewr);
-            JScrollPane scrollPane = new JScrollPane(panel);
-            frame.add(scrollPane);
-            frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-            frame.setSize(600,400);
-            frame.setVisible(true);
 
     }
 
     private void ParseBtnActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        org.antlr.v4.runtime.CharStream stream = fromString(Input.getText());
+        Java8Lexer lexer  = new Java8Lexer(stream);
+        org.antlr.v4.runtime.TokenStream tokenStream = new CommonTokenStream(lexer);
+        Java8Parser parser = new Java8Parser(tokenStream);
+
+        SyntaxErrorListener listener = new SyntaxErrorListener();
+        parser.addErrorListener(listener);
+        ParseTree tree = parser.compilationUnit();
+
+        Output.setText("");
+        for(int i=0;i<listener.getSyntaxErrors().size();i++){
+            String msg = listener.getSyntaxErrors().get(i).getMessage();
+            String error = msg.split("'")[1];
+            System.out.println(error);
+            if (error.contains("missing")) {
+                Output.append("(Syntax error at line:" + listener.getSyntaxErrors().get(i).getLine() + ") " + "missing " + error + "\n");
+            } else {
+                Output.append("(Syntax error at line:" + listener.getSyntaxErrors().get(i).getLine() + ") " + listener.getSyntaxErrors().get(i).getMessage() + "\n");
+            }
+        }
+
+
+        JFrame frame = new JFrame("Antlr Tree");
+        frame.setLocation(600,0);
+        JPanel panel = new JPanel();
+        TreeViewer viewr = new TreeViewer(Arrays.asList(
+                parser.getRuleNames()),tree);
+        //SIZE CHANGE HERE
+        viewr.setScale(1);//scale a little
+        //
+        panel.add(viewr);
+        JScrollPane scrollPane = new JScrollPane(panel);
+        frame.add(scrollPane);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setSize(600,400);
+        frame.setVisible(true);
     }
 
     private void RunBtnActionPerformed(java.awt.event.ActionEvent evt) {
