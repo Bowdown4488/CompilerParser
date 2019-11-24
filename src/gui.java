@@ -3,11 +3,14 @@ import org.antlr.runtime.*;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
 import org.antlr.v4.gui.TreeViewer;
 import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.ParseTree;
 
 import javax.swing.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 
+import static org.antlr.v4.runtime.CharStreams.fromFileName;
 import static org.antlr.v4.runtime.CharStreams.fromString;
 
 
@@ -113,8 +116,17 @@ public class gui extends javax.swing.JFrame {
     }// </editor-fold>
 
     private void ScanBtnActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
-
+//        org.antlr.v4.runtime.CharStream stream = fromString(Input.getText());
+//        Java8Lexer lexer  = new Java8Lexer(stream);
+//
+//        org.antlr.v4.runtime.Token token = lexer.nextToken();
+//        ArrayList<Token> tokens = new ArrayList<>();
+//        ArrayList<String> tokentypes = new ArrayList<>();
+//        while (token.getType() != Java8Lexer.EOF) {
+//            tokens.add(token);
+//            tokentypes.add(getTokenType(token.getType(),token.getText()));
+//            token = lexer.nextToken();
+//        }
     }
 
     private void ParseBtnActionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,6 +171,30 @@ public class gui extends javax.swing.JFrame {
     private void RunBtnActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
+
+//    private static String getTokenType(int tokenType,String tokenString) {
+//
+//        switch (tokenType) {
+//            case Java8Lexer.KEYWORD:
+//                System.out.println("\t" +  tokenString + "\t\t" + "Keyword");
+//                return "Keyword";
+//            case Java8Lexer.SEPARATOR:
+//                System.out.println("\t" +  tokenString + "\t\t" + "Separator");
+//                return "Separator";
+//            case Java8Lexer.OPERATOR:
+//                System.out.println("\t" +  tokenString + "\t\t" + "Operator");
+//                return "Operator";
+//            case Java8Lexer.Identifier:
+//                System.out.println("\t" +  tokenString + "\t\t" + "Identifier");
+//                return "Identifier";
+//            case Java8Lexer.LITERAL:
+//                System.out.println("\t" +  tokenString + "\t\t" + "Literal");
+//                return "Literal";
+//            default:
+//                System.out.println("\t" +  tokenString + "\t\t" + "Other");
+//                return "Other";
+//        }
+//    }
 
     /**
      * @param args the command line arguments
