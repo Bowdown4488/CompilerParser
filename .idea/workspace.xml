@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="63bfef75-743f-4d38-9d93-3e1918da466d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java8Lexer.g4" beforeDir="false" afterPath="$PROJECT_DIR$/Java8Lexer.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ParserTest/gui$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ParserTest/gui$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ParserTest/gui$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ParserTest/gui$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ParserTest/gui$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ParserTest/gui$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ParserTest/gui$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ParserTest/gui$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ParserTest/gui.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ParserTest/gui.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui.java" afterDir="false" />
@@ -91,7 +93,7 @@
       <workItem from="1572251361660" duration="92000" />
       <workItem from="1572251476721" duration="4278000" />
       <workItem from="1574583905745" duration="451000" />
-      <workItem from="1574586097672" duration="7088000" />
+      <workItem from="1574586097672" duration="8178000" />
     </task>
     <servers />
   </component>

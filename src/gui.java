@@ -7,6 +7,7 @@ import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.ParseTree;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -25,7 +26,10 @@ public class gui extends javax.swing.JFrame {
         ScanPane.setDividerLocation(0.33);
         ParseRunPane.setDividerLocation(0.50);
         Output.setEditable(false);
-
+        this.setTitle("AIRI-X IDE");
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        this.setSize(250,600);
     }
 
     /**
@@ -156,19 +160,19 @@ public class gui extends javax.swing.JFrame {
         }
 
 
-        JFrame frame = new JFrame("Antlr Tree");
+        JFrame frame = new JFrame("Parse Tree");
         frame.setLocation(600,0);
         JPanel panel = new JPanel();
         TreeViewer viewr = new TreeViewer(Arrays.asList(
                 parser.getRuleNames()),tree);
         //SIZE CHANGE HERE
         viewr.setScale(1);//scale a little
-        //
         panel.add(viewr);
         JScrollPane scrollPane = new JScrollPane(panel);
         frame.add(scrollPane);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setSize(600,400);
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setVisible(true);
     }
 
