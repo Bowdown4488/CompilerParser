@@ -386,25 +386,7 @@ URSHIFT_ASSIGN : '>>>=';
 Identifier
 	:	IdentifierStart IdentifierPart*
 	;
-/*
-fragment
-JavaLetter
-	:	[a-zA-Z$_] // these are the "java letters" below 0x7F
-	|	// covers all characters above 0x7F which are not a surrogate
-		~[\u0000-\u007F\uD800-\uDBFF] {this.wasJavaIdentiferStart()}?
-	|	// covers UTF-16 surrogate pairs encodings for U+10000 to U+10FFFF
-		[\uD800-\uDBFF] [\uDC00-\uDFFF] {this.wasJavaIdentiferStartUTF16()}?
-	;
-fragment
-JavaLetterOrDigit
-	:	[a-zA-Z0-9$_] // these are the "java letters or digits" below 0x7F
-	|	// covers all characters above 0x7F which are not a surrogate
-		~[\u0000-\u007F\uD800-\uDBFF] {this.wasJavaIdentiferPart()}?
-	|	// covers UTF-16 surrogate pairs encodings for U+10000 to U+10FFFF
-		[\uD800-\uDBFF] [\uDC00-\uDFFF] {this.wasJavaIdentiferPartUTF16()}?
-    ;*/
 
-// Dropped SMP support as ANTLR has no native support for it
 fragment IdentifierStart
 	: [\u0024]
 	| [\u0041-\u005A]
